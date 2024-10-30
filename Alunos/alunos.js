@@ -1,3 +1,3 @@
-let  alunos = [];
- 
-module.exports = { alunos};
+const alunos = [];
+
+module.exports = { alunos };

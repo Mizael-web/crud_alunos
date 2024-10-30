@@ -1,22 +1,23 @@
-const {alunos} = require ("./alunos" );
+const { alunos } = require("./alunos");
 
-function editarAluno (matricula, novoNome, novoTelefone, novoEmail) {
+function editarAluno(matricula, novoNome, novoEmail, novoTelefone) {
     try {
-        const aluno = alunos.find (elementodoarray => 
-         elementodoarray.matricula === matricula
-    )
-        if (aluno){
-            aluno.nome = novoNome,
-            aluno.telefone =novoTelefone,
+        // Função para encontrar um aluno
+        const aluno = alunos.find(elementodoarray => 
+            elementodoarray.matricula === matricula
+        )
+        // verificar se o aluno procurado existe
+        if (aluno) {
+            aluno.nome = novoNome
             aluno.email = novoEmail
-            console.log (" Aluno editado com sucesso" )
-        }else {
-        console.log (" Aluno não encontrado")
+            aluno.telefone = novoTelefone
+            console.log("Aluno editado com sucesso!");
+        } else {
+            console.log("Aluno não encontrado")
         }
-
-    } catch (error) { 
-        console.error ( "Erro ao editar aluno", error.message)           
-    }   
-            
+    } catch (error) {
+        console.error("Erro ao editar um aluno", error.message)
+    }
 }
-module.exports = {editarAluno};
+
+module.exports = { editarAluno };

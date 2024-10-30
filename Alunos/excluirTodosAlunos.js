@@ -1,15 +1,12 @@
-const {alunos } = require ("./alunos");
+const { alunos } = require("./alunos");
 
-function excluiTodosAlunos () {
-
+function excluirTodosAlunos() {
     try {
         alunos.length = 0
-        
-    } catch (error){
-
-     (" erro ao excluir todos os alunos!")
-        
+        console.log("Alunos excluidos com sucesso!")
+    } catch (error) {
+        console.error("Erro ao excluir todos os alunos!")
     }
 }
 
-  module.exports = { excluiTodosAlunos };
+module.exports = { excluirTodosAlunos }
